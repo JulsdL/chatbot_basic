@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Chatbot</title>
+  <title>WhatsApp-like Chatbot</title>
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="chat-window">
-      <div id="chat-messages" class="chat-messages"></div>
-      <div class="input-area">
-        <input id="user-input" type="text" placeholder="Type your question..." />
-        <button id="send-btn">Send</button>
-      </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      Chatbot Assistant
+    </div>
+    <div id="chat-messages" class="chat-messages">
+    </div>
+    <div class="chat-input">
+      <input id="user-input" type="text" placeholder="Type your question...">
+      <button id="send-btn">Send</button>
     </div>
   </div>
   <script src="/static/script.js"></script>
