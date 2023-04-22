@@ -16,4 +16,19 @@ function addMessage(role, content) {
   const message = document.createElement("div");
   message.className = "message";
   message.innerHTML = `<span class="${role}">${role === "user" ? "You" : "Assistant"}:</span> ${content}`;
-  chatMessages }
+  chatMessages.appendChild(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function fetchChatbotResponse(question) {
+  const response = await fetch("/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ question })
+  });
+
+  const data = await response.json();
+  return data.response;
+}
